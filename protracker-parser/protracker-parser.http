@@ -1,0 +1,6 @@
+@protracker_parser_HostAddress = http://localhost:5083
+
+GET {{protracker_parser_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
