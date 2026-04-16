@@ -2,6 +2,6 @@
 {
     public class UserRequest
     {
-        public string InputText { get; private set; } = null!;
+        public string InputText { get; set; } = null!;
     }
 }
