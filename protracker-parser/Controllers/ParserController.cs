@@ -8,16 +8,16 @@ namespace protracker_parser.Controllers
     public class ParserController : ControllerBase
     {
 
-        private ParserService ParserService;
+        private readonly ParserService _parserService;
         public ParserController()
         {
-            ParserService = new ParserService();
+            _parserService = new ParserService();
         }
 
         [HttpPost]
         public IActionResult Process([FromBody] UserRequest userRequest)
         {
-            var result = ParserService.Process(userRequest.InputText);
+            var result = _parserService.Process(userRequest.InputText);
             return Ok(result);
         }
     }
