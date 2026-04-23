@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using protracker_parser.Models;
+using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
 using System.Text.Json;
@@ -26,9 +27,15 @@ namespace protracker_parser.Services
             {
                 var response = await _httpClient.GetAsync(url);
                 response.EnsureSuccessStatusCode();
-
                 var jsonString = await response.Content.ReadAsStringAsync();
-                return jsonString;
+                var allHeroes = JsonSerializer.Deserialize<List<Hero>>(jsonString);
+                var hero = allHeroes[heroId];
+                if(hero != null)
+                {
+                    return $"Hero: {hero.Name}, id: {hero.Id}";
+                }
+                return "icorrect id";
+
             }
             catch (Exception e)
             {
