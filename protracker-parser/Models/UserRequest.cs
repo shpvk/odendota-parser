@@ -1,7 +1,10 @@
-﻿namespace protracker_parser.Models
+﻿using System.Text.Json.Serialization;
+
+namespace protracker_parser.Models
 {
     public class UserRequest
     {
-        public int HeroId { get; set; }
+        //[JsonPropertyName("heroId")]
+        public int InputText { get; set; }
     }
 }

@@ -10,6 +10,22 @@ namespace protracker_parser.Models
         [JsonPropertyName("localized_name")]
         public string? Name { get; set; }
 
-        
+
+        [JsonPropertyName("pub_pick")]
+        public int PubPicks { get; set; }
+
+        [JsonPropertyName("pub_win")]
+        public int PubWins { get; set; }
+
+
+        [JsonPropertyName("turbo_picks")]
+        public int TurboPicks { get; set; }
+
+        [JsonPropertyName("turbo_wins")]
+        public int TurboWins { get; set; }
+
+        [JsonPropertyName("img")]
+        public string? ImgPath { get; set; }
+
     }
 }

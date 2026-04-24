@@ -20,7 +20,7 @@ namespace protracker_parser.Controllers
         {
             try
             {
-                var result = await _parserService.Process(userRequest.HeroId);
+                var result = await _parserService.Process(userRequest.InputText);
                 return Ok(result);
             }
             catch(Exception e)
